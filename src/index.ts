@@ -48,5 +48,5 @@ const port = process.env.PORT || 8080;
 
 // Serve the application at the given port
 app.listen(port, () => {
-  console.log(`Listening at ${process.env.NODE_ENV !== "production" ? "http://localhost:" : "https://api-sdpm-simulator.herokuapp.com:"}${port}/`);
+  console.log(`Listening at ${process.env.NODE_ENV !== "production" ? "http://localhost:" : "https://simulador-memoria.herokuapp.com:"}${port}/`);
 });

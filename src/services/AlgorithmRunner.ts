@@ -60,7 +60,7 @@ export default class AlgorithmRunner {
       console.log(error)
       return {
         success: false,
-        message: `Erro: ${(error as Error).message}`,
+        message: `Error: ${(error as Error).message}`,
       }
     }
   }

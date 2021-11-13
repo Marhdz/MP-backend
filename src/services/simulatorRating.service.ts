@@ -9,7 +9,7 @@ export const simulatorRatingService = async (req: any, res: any, next: any) => {
     res.send({ success: true });
   } catch (error) {
     console.log(error);
-    res.send({ success: false, message: `Erro: ${(error as Error).message}` });
+    res.send({ success: false, message: `Error: ${(error as Error).message}` });
   }
 }
 
@@ -21,6 +21,6 @@ export const simulationRatingStatsService = async (req: any, res: any, next: any
     res.send({ success: true, data });
   } catch (error) {
     console.log(error);
-    res.send({ success: false, message: `Erro: ${(error as Error).message}` });
+    res.send({ success: false, message: `Error: ${(error as Error).message}` });
   }
 }

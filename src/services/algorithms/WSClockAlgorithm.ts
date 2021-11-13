@@ -56,18 +56,18 @@ export default class WSClockAlgorithm extends AlgorithmInterface {
       const modified = actionsQueue[i] === "E"
 
       if (this.memory.referencePage(pageName)) {
-        if (shouldShowDetails) simulationExecution.push({ fault: false, pageName, action: `A página ${pageName} está na memória.`, memory: this.memory.getPages() })
+        if (shouldShowDetails) simulationExecution.push({ fault: false, pageName, action: `La página ${pageName} está en la memoria.`, memory: this.memory.getPages() })
       } else {
         faults++;
         if (this.memory.hasFreePosition()) {
           this.memory.replacePage(pageName, "0", modified);
           this.fifoQueue.unshift(pageName);
-          if (shouldShowDetails) simulationExecution.push({ fault: true, pageName, action: `A página ${pageName} foi inserida em uma posição livre da memória.`, memory: this.memory.getPages() })
+          if (shouldShowDetails) simulationExecution.push({ fault: true, pageName, action: `La página ${pageName} se ha insertado en una ubicación de memoria libre.`, memory: this.memory.getPages() })
         } else {
           const pageNameToReplace = this.findPageToReplace();
           this.memory.replacePage(pageName, pageNameToReplace, modified);
           this.fifoQueue.unshift(pageName);
-          if (shouldShowDetails) simulationExecution.push({ fault: true, pageName, action: `A página ${pageName} foi inserida no lugar da página ${pageNameToReplace}.`, memory: this.memory.getPages() })
+          if (shouldShowDetails) simulationExecution.push({ fault: true, pageName, action: `Se insertó la página ${pageName} en lugar de la página ${pageNameToReplace}.`, memory: this.memory.getPages() })
         }
       }
       this.memory.setModified(this.memory.findIndex(pageName), modified);
